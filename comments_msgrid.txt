@@ -1,0 +1,99 @@
+//    // CAN BE REPLACED USING LINKED_HASHSET
+//    private final ArrayList<Cell> cleanBounds = new ArrayList<>();
+//    private void removeDups() {
+//        cleanBounds.add(maxBounds.getFirst());
+//        for (int i = 1; i < maxBounds.size(); i++) {
+//            Cell c = maxBounds.get(i);
+//            boolean isAlrThere = false;
+//            for (Cell c1 : cleanBounds) {
+//                if (c.isSame(c1)) {
+//                     isAlrThere = true;
+//                     break;
+//                }
+//            }
+//            if (!isAlrThere) cleanBounds.add(c);
+//        }
+//    }
+
+//    private void showBounds() {
+//        for (Cell c : cleanBounds) {
+//            mineShowMap[c.getX()][c.getY()].setHidden(false);
+//        }
+//    }
+
+
+// Some lines for testing in main method
+//// grid.removeDuplicates(grid.getBounds(grid.bounds));
+//        grid.removeDuplicates(grid.bounds);
+//        grid.removeDuplicates1(grid.getNonZeroBounds(grid.cleanBounds));
+//        // for (Cell c : grid.finalNonZeroBounds) System.out.println(c.getX() + ", " + c.getY());
+//        // System.out.println(grid.finalNonZeroBounds.size());
+//        grid.showBounds();
+//        System.out.println();
+//        grid.printMap();
+//// System.out.println();
+//// for (Cell c : grid.getNonZeroBounds(grid.cleanBounds)) System.out.println(c.getX() + ", " + c.getY());
+//// System.out.println(grid.getNonZeroBounds(grid.cleanBounds).size());
+//
+//// for(Cell c : grid.cleanBounds) System.out.println(c.getX() + ", " + c.getY());
+//        for (Cell c : grid.bounds) {
+//            System.out.println(c.getX() + " ," + c.getY());
+//        }
+//        for (Cell c : grid.cleanBounds) {
+//            System.out.println(c.getX() + ", " + c.getY());
+//        }
+//        System.out.println(grid.cleanBounds.size());
+
+
+// OLD METHOD FOR GETTING BOUNDARIES
+//private ArrayList<Cell> getBounds(ArrayList<Cell> bounds) {
+//    ArrayList<Integer> Xbounds = new ArrayList<>();
+//    for (Cell c : bounds) Xbounds.add(c.getX());
+//
+//    ArrayList<Cell> maxBounds = new ArrayList<>();
+//
+//    Cell max = new Cell(-1, -1), min = new Cell(len, len);
+//
+//    for (int i : Xbounds) {
+//        for (Cell c : bounds) {
+//            if (c.getX() == i) {
+//                if (c.getY() > max.getY()) max = new Cell(c);
+//                if (c.getY() < min.getY()) min = new Cell(c);
+//            }
+//        }
+//        maxBounds.add(max);
+//        maxBounds.add(min);
+//        max = new Cell(-1, -1);
+//        min = new Cell(len, len);
+//    }
+//    return maxBounds;
+//}
+
+//public static void main(String[] argus) {
+//    Scanner sc = new Scanner(System.in);
+//    MsGrid grid = new MsGrid(9, 10, 6, 2);
+//    grid.printMine();
+//    System.out.println();
+//    grid.printMap();
+//}
+
+//    private void expose_zero_neighbours(int r, int c, int v, int h, int iters) {
+//        int count = iters;
+//        if (r < 0 || r >= len || c < 0 || c >= len) return;
+//        if (mineShowMap[r][c].isHidden()) {
+//                if (count > 14)
+//                    mineShowMap[r][c].setHidden(false);
+//                else {
+//                    if (mineShowMap[r][c].getNeighbours() == 0)
+//                        mineShowMap[r][c].setHidden(false);
+//                }
+//            for (int i = -1; i <= 1; i++) {
+//                for (int j = -1; j <= 1; j++) {
+//                    if (i == -v && j == -h) continue;
+//                    count++;
+//                    if (count > 15) return;
+//                    expose_zero_neighbours(r + i, c + j, i, j, count);
+//                }
+//            }
+//        }
+//    }
