@@ -4,3 +4,5 @@ This is a clone of the famous puzzle game "Minesweeper", released by Microsoft i
 2) Clone the repository `https://github.com/mistovek016/MineSweeper_Java.git`
 3) Compile the Player File `javac Player.java`
 4) Run the program `java Player`
+
+Hope you have fun! :)
